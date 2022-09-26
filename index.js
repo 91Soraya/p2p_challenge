@@ -185,42 +185,44 @@ const addEventListenerToRemoveButtons = () => {
 const createCards = () => {
   cleanCardContainer();
 
-  let filtered = [...characters];
+  // let filtered = [...characters];
 
-  filtered = filtered.filter(
-    (character) => character.gender === genderFilter.value
-  );
+  // filtered = filtered.filter(
+  //   (character) => character.gender === genderFilter.value
+  // );
 
-  filtered = filtered.filter(
-    (character) => character.status === statusFilter.value
-  );
+  // filtered = filtered.filter(
+  //   (character) => character.status === statusFilter.value
+  // );
 
-  filtered = filtered.filter(
-    (character) => character.species === speciesFilter.value
-  );
+  // filtered = filtered.filter(
+  //   (character) => character.species === speciesFilter.value
+  // );
 
-  filtered = filtered.filter((character) =>
-    character.name.toLowerCase().includes(search.value.toLowerCase())
-  );
+  // filtered = filtered.filter((character) =>
+  //   character.name.toLowerCase().includes(search.value.toLowerCase())
+  // );
 
-  filtered.filter((character) => {
-    !chosenIds.includes(character.id);
-  });
+  // filtered.filter((character) => {
+  //   !chosenIds.includes(character.id);
+  // });
 
-  if (filtered.length === 0) {
-    const textElement = document.createElement("p");
-    const text = document.createTextNode("No character matches the filter");
-    textElement.appendChild(text);
-    characterContainer.appendChild(textElement);
-    addEventListenerToChooseButtons();
-    addEventListenerToRemoveButtons();
-    return;
-  }
+  // if (filtered.length === 0) {
+  //   const textElement = document.createElement("p");
+  //   const text = document.createTextNode("No character matches the filter");
+  //   textElement.appendChild(text);
+  //   characterContainer.appendChild(textElement);
+  //   addEventListenerToChooseButtons();
+  //   addEventListenerToRemoveButtons();
+  //   return;
+  // }
 
   printCards(characters);
   addEventListenerToChooseButtons();
   addEventListenerToRemoveButtons();
 };
+
+createCards();
 
 const chooseCharacter = (e) => {
   chosenIds.push(parseInt(e.target.id));
